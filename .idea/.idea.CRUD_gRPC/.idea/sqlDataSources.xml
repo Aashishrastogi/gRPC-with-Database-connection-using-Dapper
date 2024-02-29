@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DdlMappings">
+    <mapping uuid="9b52bc1e-86ed-46dd-9ea6-aacd57170436" name="@AASHISHRASTOGI Mapping">
+      <data-sources db="5b0dde7f-ff4f-4874-8524-84ce2392a670" />
+      <scope>
+        <node kind="database" qname="PracticeCodes">
+          <node kind="schema" negative="1" />
+        </node>
+      </scope>
+    </mapping>
+  </component>
+</project>
