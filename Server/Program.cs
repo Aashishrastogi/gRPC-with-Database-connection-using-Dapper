@@ -1,8 +1,4 @@
-using System.Data;
-using System.Data.Common;
 using Server.Services;
-
-using Microsoft.Data.SqlClient;
 using Serilog;
 using Server.Database_Operations;
 
@@ -59,12 +55,23 @@ builder.Services.AddSingleton<DatabaseContext>();
 
 var app = builder.Build();
 
+
+
+
+
+
 // Configure the HTTP request pipeline.
 app.MapGrpcService<GreeterService>();
 
-app.Services.GetRequiredService<DatabaseContext>();
+var databaseServices = app.Services.GetRequiredService<DatabaseContext>();
 
+var status = databaseServices.Preprocessing_Database(builder.Configuration.GetValue<int>("DatabaseOperations"));
 
+if (status != true)
+{
+    throw new Exception(message: "Database Cleanup not successful");
+
+}
 app.MapGet("/",
     () =>
         "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");

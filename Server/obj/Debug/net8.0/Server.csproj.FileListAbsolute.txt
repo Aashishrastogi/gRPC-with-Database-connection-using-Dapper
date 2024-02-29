@@ -98,3 +98,4 @@ D:\Rider Project Folder\CRUD_gRPC\Server\bin\Debug\net8.0\runtimes\win-arm\nativ
 D:\Rider Project Folder\CRUD_gRPC\Server\bin\Debug\net8.0\runtimes\win-arm64\native\e_sqlite3.dll
 D:\Rider Project Folder\CRUD_gRPC\Server\bin\Debug\net8.0\runtimes\win-x64\native\e_sqlite3.dll
 D:\Rider Project Folder\CRUD_gRPC\Server\bin\Debug\net8.0\runtimes\win-x86\native\e_sqlite3.dll
+D:\Rider Project Folder\CRUD_gRPC\Server\obj\Debug\net8.0\Server.sourcelink.json
