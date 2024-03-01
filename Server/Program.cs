@@ -9,10 +9,10 @@ builder.Services.AddGrpc();
 
 var configuration = new ConfigurationBuilder()
     .SetBasePath(Directory.GetCurrentDirectory())
-    .AddJsonFile("appsettings.json", optional: true, reloadOnChange: true)
+    .AddJsonFile("appsettings.json", true, true)
     .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json"
-        , optional: true
-        ,reloadOnChange: true)
+        , true
+        , true)
     .Build();
 
 Log.Logger = new LoggerConfiguration()
@@ -22,7 +22,7 @@ Log.Logger = new LoggerConfiguration()
 
 builder.Host.UseSerilog();
 
-builder.Configuration.AddJsonFile("appsettings.json", optional: false);
+builder.Configuration.AddJsonFile("appsettings.json", false);
 
 // Database Configuration
 /*builder.Services.AddSingleton<DbConnectionStringBuilder>(provider =>
@@ -56,10 +56,6 @@ builder.Services.AddSingleton<DatabaseContext>();
 var app = builder.Build();
 
 
-
-
-
-
 // Configure the HTTP request pipeline.
 app.MapGrpcService<GreeterService>();
 
@@ -67,11 +63,7 @@ var databaseServices = app.Services.GetRequiredService<DatabaseContext>();
 
 var status = databaseServices.Preprocessing_Database(builder.Configuration.GetValue<int>("DatabaseOperations"));
 
-if (status != true)
-{
-    throw new Exception(message: "Database Cleanup not successful");
-
-}
+if (status != true) throw new Exception("Database Cleanup not successful");
 app.MapGet("/",
     () =>
         "Communication with gRPC endpoints must be made through a gRPC client. To learn how to create a client, visit: https://go.microsoft.com/fwlink/?linkid=2086909");

@@ -6,8 +6,8 @@ namespace Server.Services;
 
 public class GreeterService : Greeter.GreeterBase
 {
-    private readonly ILogger<GreeterService> _logger;
     private readonly DatabaseContext _databaseContext;
+    private readonly ILogger<GreeterService> _logger;
 
 
     public GreeterService(ILogger<GreeterService> logger, DatabaseContext databaseContext)

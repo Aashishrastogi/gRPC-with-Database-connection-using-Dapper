@@ -8,28 +8,28 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <PackageReference Include="Dapper" Version="2.1.28" />
-      <PackageReference Include="Google.Protobuf" Version="3.25.3" />
-      <PackageReference Include="Grpc.Net.Client" Version="2.57.0" />
-      <PackageReference Include="Grpc.Tools" Version="2.62.0">
-        <PrivateAssets>all</PrivateAssets>
-        <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-      </PackageReference>
-      <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.2" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0" />
-      <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0" />
+        <PackageReference Include="Dapper" Version="2.1.28"/>
+        <PackageReference Include="Google.Protobuf" Version="3.25.3"/>
+        <PackageReference Include="Grpc.Net.Client" Version="2.57.0"/>
+        <PackageReference Include="Grpc.Tools" Version="2.62.0">
+            <PrivateAssets>all</PrivateAssets>
+            <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+        </PackageReference>
+        <PackageReference Include="Microsoft.Data.Sqlite" Version="8.0.2"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="8.0.0"/>
+        <PackageReference Include="Microsoft.Extensions.DependencyInjection.Abstractions" Version="8.0.0"/>
     </ItemGroup>
 
     <ItemGroup>
-      <Protobuf Include="Protos\greet.proto">
-        <GrpcServices>Client</GrpcServices>
-        <Access>Public</Access>
-        <ProtoCompile>True</ProtoCompile>
-        <CompileOutputs>True</CompileOutputs>
-        <OutputDir>obj\Debug\net8.0\</OutputDir>
-        <Generator>MSBuild:Compile</Generator>
-        <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-      </Protobuf>
+        <Protobuf Include="Protos\greet.proto">
+            <GrpcServices>Client</GrpcServices>
+            <Access>Public</Access>
+            <ProtoCompile>True</ProtoCompile>
+            <CompileOutputs>True</CompileOutputs>
+            <OutputDir>obj\Debug\net8.0\</OutputDir>
+            <Generator>MSBuild:Compile</Generator>
+            <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+        </Protobuf>
     </ItemGroup>
 
 </Project>
